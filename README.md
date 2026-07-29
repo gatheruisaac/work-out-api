@@ -32,16 +32,14 @@ This API allows users to:
 
 ## Project Structure
 
-```
+```text
 work-out-api/
-│
 ├── app/
 │   ├── __init__.py
 │   ├── extensions.py
 │   ├── models/
 │   ├── routes/
 │   └── schemas/
-│
 ├── migrations/
 ├── config.py
 ├── run.py
@@ -134,9 +132,9 @@ Start the Flask development server:
 pipenv run python3 run.py
 ```
 
-The application will run at:
+The application will be available at:
 
-```
+```text
 http://127.0.0.1:5000
 ```
 
@@ -220,9 +218,11 @@ The following endpoints were successfully tested:
 
 ---
 
-## Example Requests
+## Example Requests and Responses
 
 ### Create a Workout
+
+**Request**
 
 ```json
 {
@@ -232,7 +232,23 @@ The following endpoints were successfully tested:
 }
 ```
 
+**Response (201 Created)**
+
+```json
+{
+    "id": 3,
+    "date": "2026-08-01",
+    "duration_minutes": 60,
+    "notes": "Full body workout",
+    "exercises": []
+}
+```
+
+---
+
 ### Create an Exercise
+
+**Request**
 
 ```json
 {
@@ -242,10 +258,39 @@ The following endpoints were successfully tested:
 }
 ```
 
-### Add an Exercise to a Workout
+**Response (201 Created)**
 
 ```json
 {
+    "id": 4,
+    "name": "Bench Press",
+    "category": "Chest",
+    "equipment_needed": true,
+    "workouts": []
+}
+```
+
+---
+
+### Add an Exercise to a Workout
+
+**Request**
+
+```json
+{
+    "reps": 10,
+    "sets": 4,
+    "duration_seconds": 0
+}
+```
+
+**Response (201 Created)**
+
+```json
+{
+    "id": 4,
+    "workout_id": 1,
+    "exercise_id": 2,
     "reps": 10,
     "sets": 4,
     "duration_seconds": 0
