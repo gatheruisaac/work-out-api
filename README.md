@@ -1,10 +1,10 @@
-# work-out-api# 🏋️ Workout API
+# Workout API
 
-A RESTful Workout API built with **Flask**, **Flask-SQLAlchemy**, **Flask-Migrate**, and **Marshmallow**. The application enables personal trainers and fitness enthusiasts to manage workouts, exercises, and the relationship between them.
+A RESTful Workout API built with Flask, Flask-SQLAlchemy, Flask-Migrate, and Marshmallow. The application enables personal trainers and fitness enthusiasts to manage workouts, exercises, and the relationship between them.
 
 ---
 
-## 📖 Project Overview
+## Project Overview
 
 This API allows users to:
 
@@ -17,7 +17,7 @@ This API allows users to:
 
 ---
 
-## 🛠️ Technologies Used
+## Technologies Used
 
 - Python 3
 - Flask
@@ -30,7 +30,7 @@ This API allows users to:
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 work-out-api/
@@ -54,7 +54,7 @@ work-out-api/
 
 ---
 
-## 🗄️ Database Models
+## Database Models
 
 ### Exercise
 
@@ -74,7 +74,7 @@ work-out-api/
 | duration_minutes | Integer |
 | notes | Text |
 
-### WorkoutExercise (Join Table)
+### WorkoutExercise
 
 | Field | Type |
 |--------|------|
@@ -87,7 +87,7 @@ work-out-api/
 
 ---
 
-## 🔗 Relationships
+## Relationships
 
 - A Workout has many WorkoutExercises.
 - An Exercise has many WorkoutExercises.
@@ -98,7 +98,7 @@ work-out-api/
 
 ---
 
-# ⚙️ Installation
+## Installation
 
 Clone the repository:
 
@@ -106,7 +106,7 @@ Clone the repository:
 git clone https://github.com/gatheruisaac/work-out-api.git
 ```
 
-Navigate into the project:
+Navigate into the project directory:
 
 ```bash
 cd work-out-api
@@ -126,7 +126,7 @@ pipenv shell
 
 ---
 
-# ▶️ Running the Application
+## Running the Application
 
 Start the Flask development server:
 
@@ -142,15 +142,15 @@ http://127.0.0.1:5000
 
 ---
 
-# 🗃️ Database Setup
+## Database Setup
 
-Initialize the database migrations:
+Initialize migrations:
 
 ```bash
 pipenv run flask --app run.py db init
 ```
 
-Generate a migration:
+Create a migration:
 
 ```bash
 pipenv run flask --app run.py db migrate -m "Initial migration"
@@ -164,9 +164,9 @@ pipenv run flask --app run.py db upgrade
 
 ---
 
-# 🌱 Seed the Database
+## Seed the Database
 
-Populate the database with sample workout data:
+Populate the database with sample data:
 
 ```bash
 pipenv run python3 seed.py
@@ -174,9 +174,9 @@ pipenv run python3 seed.py
 
 ---
 
-# 📡 API Endpoints
+## API Endpoints
 
-## Workouts
+### Workouts
 
 | Method | Endpoint | Description |
 |---------|----------|-------------|
@@ -185,9 +185,7 @@ pipenv run python3 seed.py
 | POST | `/workouts/` | Create a new workout |
 | DELETE | `/workouts/<id>` | Delete a workout |
 
----
-
-## Exercises
+### Exercises
 
 | Method | Endpoint | Description |
 |---------|----------|-------------|
@@ -196,9 +194,7 @@ pipenv run python3 seed.py
 | POST | `/exercises/` | Create a new exercise |
 | DELETE | `/exercises/<id>` | Delete an exercise |
 
----
-
-## Workout Exercises
+### Workout Exercises
 
 | Method | Endpoint | Description |
 |---------|----------|-------------|
@@ -206,9 +202,9 @@ pipenv run python3 seed.py
 
 ---
 
-# 🧪 Testing
+## Testing
 
-The API was tested using **Postman**.
+The API was tested using Postman.
 
 The following endpoints were successfully tested:
 
@@ -224,9 +220,9 @@ The following endpoints were successfully tested:
 
 ---
 
-# 📌 Example Requests
+## Example Requests
 
-## Create a Workout
+### Create a Workout
 
 ```json
 {
@@ -236,7 +232,7 @@ The following endpoints were successfully tested:
 }
 ```
 
-## Create an Exercise
+### Create an Exercise
 
 ```json
 {
@@ -246,7 +242,7 @@ The following endpoints were successfully tested:
 }
 ```
 
-## Add an Exercise to a Workout
+### Add an Exercise to a Workout
 
 ```json
 {
