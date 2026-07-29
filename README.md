@@ -132,7 +132,7 @@ Start the Flask development server:
 pipenv run python3 run.py
 ```
 
-The application will be available at:
+The application will run at:
 
 ```text
 http://127.0.0.1:5000
@@ -220,9 +220,25 @@ The following endpoints were successfully tested:
 
 ## Example Requests and Responses
 
-### Create a Workout
+The following examples demonstrate how to test the API using Postman.
 
-**Request**
+### 1. Create a Workout
+
+**Method:** `POST`
+
+**URL**
+
+```text
+http://127.0.0.1:5000/workouts/
+```
+
+**Headers**
+
+```text
+Content-Type: application/json
+```
+
+**Body (raw → JSON)**
 
 ```json
 {
@@ -246,9 +262,23 @@ The following endpoints were successfully tested:
 
 ---
 
-### Create an Exercise
+### 2. Create an Exercise
 
-**Request**
+**Method:** `POST`
+
+**URL**
+
+```text
+http://127.0.0.1:5000/exercises/
+```
+
+**Headers**
+
+```text
+Content-Type: application/json
+```
+
+**Body (raw → JSON)**
 
 ```json
 {
@@ -272,9 +302,23 @@ The following endpoints were successfully tested:
 
 ---
 
-### Add an Exercise to a Workout
+### 3. Add an Exercise to a Workout
 
-**Request**
+**Method:** `POST`
+
+**URL**
+
+```text
+http://127.0.0.1:5000/workouts/1/exercises/2/workout_exercises/
+```
+
+**Headers**
+
+```text
+Content-Type: application/json
+```
+
+**Body (raw → JSON)**
 
 ```json
 {
